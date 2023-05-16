@@ -17,7 +17,7 @@ public class Bank {
 		return numberOfCustomers;
 	}
 	
-	public  Customer getCustomer(int customer_index){
+	public  Customer getCustomer(int customer_index) {
 		return customers[customer_index];
 	}
 }

@@ -3,7 +3,7 @@ package com.mybank.domain;
 public class Account{
 	protected double balance;
 	
-	public Account(double initBalance){
+	protected Account(double initBalance){
 		balance = initBalance;
 	}
 
@@ -16,6 +16,8 @@ public class Account{
         boolean result = true;
 		if(amt <= balance){
 			balance = balance - amt;
+		}else{
+			return false;
 		}
         return result;
 	}

@@ -13,7 +13,7 @@ public class Customer {
 		numberOfAccounts = 0;
 	}
 	
-	public void addAccount(Account acct){
+	public void setAccount(Account acct){
 		int i = numberOfAccounts++;
 		accounts[i] = acct;
 	}
@@ -21,7 +21,7 @@ public class Customer {
 	public int getNumOfAccounts(){
 		return numberOfAccounts;
 	}
-	
+
 	public Account getAccount(int account_index){
 		return accounts[account_index];
 	}
