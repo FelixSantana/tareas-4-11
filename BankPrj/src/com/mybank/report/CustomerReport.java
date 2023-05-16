@@ -4,16 +4,30 @@ import com.mybank.domain.*;
 
 public class CustomerReport {
 
+  private Bank bank;
+
+  public CustomerReport() {
+  }
+
+  public Bank getBank() {
+    return bank;
+  }
+
+  public void setBank(Bank bank) {
+    this.bank = bank;
+  }
 
   public void generateReport() {
-    
 
     // Print report header
     System.out.println("\t\t\tCUSTOMERS REPORT");
     System.out.println("\t\t\t================");
-     // For each customer...
-    for ( int cust_idx = 0; cust_idx < Bank.getNumOfCustomers(); cust_idx++ ) {
-      Customer customer = Bank.getCustomer(cust_idx);
+
+    // For each customer...
+    for ( int cust_idx = 0;
+          cust_idx < bank.getNumOfCustomers();
+          cust_idx++ ) {
+      Customer customer = bank.getCustomer(cust_idx);
 
       // Print the customer's name
       System.out.println();
@@ -31,20 +45,23 @@ public class CustomerReport {
         // Determine the account type
         /*** Use the instanceof operator to test what type of account
         **** we have and set account_type to an appropriate value, such
-        **** as "Savings Account" or "Checking Account".*/
-    // YOUR CODE HERE
-    if (account instanceof SavingsAccount){
-      account_type = "Savings Account";
-    }else if(account instanceof CheckingAccount){
-      account_type = "Cheking Account";
-    }else{
-      account_type = "Unknown Account Type";
-    }
-          // Print the current balance of the account
-          /*** Print out the type of account and the balance. */
-    // YOUR CODE HERE
-    System.out.println("   " + account_type + ": current balance is " + account.getBalance());
-        }
+        **** as "Savings Account" or "Checking Account". ***/
+	// YOUR CODE HERE
+  if ( account instanceof SavingsAccount ) {           
+    account_type = "Savings Account";
+  } else if ( account instanceof CheckingAccount ) {           
+    account_type = "Checking Account";
+  } else {           
+    account_type = "Unknown Account Type";
+  }
+
+
+        // Print the current balance of the account
+        /*** Print out the type of account and the balance. ***/
+	// YOUR CODE HERE
+  System.out.println(" " + account_type + ": current balance is "+ account.getBalance());
+
       }
+    }
   }
 }

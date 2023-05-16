@@ -18,25 +18,25 @@ public class TestBanking {
     bank.addCustomer("Jane", "Simms");
     customer = bank.getCustomer(0);
     System.out.println("Creating her Savings Account with a 500.00 balance and 3% interest.");
-    customer.setAccount(new SavingsAccount(500.00, 0.03));
+    customer.addAccount(new SavingsAccount(500.00, 0.03));
 
     System.out.println("Creating the customer Owen Bryant.");
     bank.addCustomer("Owen", "Bryant");
     customer = bank.getCustomer(1);
     System.out.println("Creating his Checking Account with a 500.00 balance and no overdraft protection.");
-    customer.setAccount(new CheckingAccount(500.00));
+    customer.addAccount(new CheckingAccount(500.00));
 
     System.out.println("Creating the customer Tim Soley.");
     bank.addCustomer("Tim", "Soley");
     customer = bank.getCustomer(2);
     System.out.println("Creating his Checking Account with a 500.00 balance and 500.00 in overdraft protection.");
-    customer.setAccount(new CheckingAccount(500.00, 500.00));
+    customer.addAccount(new CheckingAccount(500.00, 500.00));
 
     System.out.println("Creating the customer Maria Soley.");
     bank.addCustomer("Maria", "Soley");
     customer = bank.getCustomer(3);
     System.out.println("Maria shares her Checking Account with her husband Tim.");
-    customer.setAccount(bank.getCustomer(2).getAccount(2));
+    customer.addAccount(bank.getCustomer(2).getAccount(2));
 
     System.out.println();
 

@@ -13,7 +13,7 @@ public class Customer {
 		numberOfAccounts = 0;
 	}
 	
-	public void setAccount(Account acct){
+	public void addAccount(Account acct){
 		int i = numberOfAccounts++;
 		accounts[i] = acct;
 	}
