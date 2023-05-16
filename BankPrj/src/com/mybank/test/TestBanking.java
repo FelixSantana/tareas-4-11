@@ -63,7 +63,7 @@ public class TestBanking {
     // Test a Checking Account w/o overdraft protection
     System.out.println("Retrieving the customer Owen Bryant with his checking account with no overdraft protection.");
     customer = bank.getCustomer(1);
-    account = customer.getAccount(1);
+    account = customer.getAccount(0);
     
     // Perform some account transactions
     System.out.println("Withdraw 150.00: " + account.withdraw(150.00));
@@ -80,7 +80,7 @@ public class TestBanking {
     // Test a Checking Account with overdraft protection
     System.out.println("Retrieving the customer Tim Soley with his checking account that has overdraft protection.");
     customer = bank.getCustomer(2);
-    account = customer.getAccount(2);
+    account = customer.getAccount(0);
     // Perform some account transactions
     System.out.println("Withdraw 150.00: " + account.withdraw(150.00));
     System.out.println("Deposit 22.50: " + account.deposit(22.50));
@@ -96,7 +96,7 @@ public class TestBanking {
     // Test a Checking Account with overdraft protection
     System.out.println("Retrieving the customer Maria Soley with her joint checking account with husband Tim.");
     customer = bank.getCustomer(3);
-    account = customer.getAccount(3);
+    account = customer.getAccount(0);
     // Perform some account transactions
     System.out.println("Deposit 150.00: " + account.deposit(150.00));
     System.out.println("Withdraw 750.00: " + account.withdraw(750.00));
