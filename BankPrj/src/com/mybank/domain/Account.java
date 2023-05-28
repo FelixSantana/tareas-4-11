@@ -7,19 +7,16 @@ public class Account{
 		balance = initBalance;
 	}
 
-	public boolean deposit(double amt){
+	public void deposit(double amt){
 		balance = balance + amt;
-        return true;
 	}
 	
-	public boolean withdraw(double amt){
-        boolean result = true;
+	public void withdraw(double amt) throws OverdraftException{
 		if(amt <= balance){
 			balance = balance - amt;
 		}else{
-			return false;
+			throw new OverdraftException("Insufficent funds", amt - balance);
 		}
-        return result;
 	}
 		
 	public double getBalance(){

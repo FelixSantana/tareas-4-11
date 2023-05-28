@@ -12,19 +12,17 @@ public class CheckingAccount extends Account {
 		this(initBalance, 0.0);
 	}
 	
-	public boolean withdraw(double amount){
-		boolean result = true;
+	public void withdraw(double amount) throws OverdraftException{
 		if (balance < amount){
 			double overdraftNeeded = amount - balance;
 			if(overdraftAmount < overdraftNeeded){
-				result = false;
+				throw new OverdraftException("Insufficient funds for overdraft protection", overdraftNeeded);
 			} else {
 				balance = 0.0;
 				overdraftAmount -= overdraftNeeded;
 			}
 		} else {
-			balance -= amount;
+			balance = balance - amount;
 		}
-		return result;
 	}
 }
