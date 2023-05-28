@@ -2,6 +2,9 @@
     "folders": [
         {
             "path": "BankPrj"
+        },
+        {
+            "path": "../SL275_complemento/exercises/07_class2/exercise2/InterfaceProject"
         }
     ]
 }
