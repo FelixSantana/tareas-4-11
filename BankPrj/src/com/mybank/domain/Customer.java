@@ -1,29 +1,27 @@
 package com.mybank.domain;
+import java.util.*;
 
 public class Customer {
     private String firstName;
 	private String lastName;
-	private Account[] accounts;
-	private int numberOfAccounts;
+	private List<Account> accounts;
 	
 	public Customer(String f, String l){
 		this.firstName = f;
 		this.lastName = l;
-		accounts = new Account[10];
-		numberOfAccounts = 0;
+		accounts = new ArrayList<>(10);
 	}
 	
 	public void addAccount(Account acct){
-		int i = numberOfAccounts++;
-		accounts[i] = acct;
+		accounts.add(acct);
 	}
 	
 	public int getNumOfAccounts(){
-		return numberOfAccounts;
+		return accounts.size();
 	}
 
 	public Account getAccount(int account_index){
-		return accounts[account_index];
+		return accounts.get(account_index);
 	}
 	
 	public String getFirstName(){
