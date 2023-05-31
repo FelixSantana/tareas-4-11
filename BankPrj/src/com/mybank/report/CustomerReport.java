@@ -47,13 +47,14 @@ public class CustomerReport {
         **** we have and set account_type to an appropriate value, such
         **** as "Savings Account" or "Checking Account". ***/
 	// YOUR CODE HERE
-  if ( account instanceof SavingsAccount ) {           
-    account_type = "Savings Account";
-  } else if ( account instanceof CheckingAccount ) {           
-    account_type = "Checking Account";
-  } else {           
-    account_type = "Unknown Account Type";
-  }
+// Determine the account type
+if (account instanceof SavingsAccount) {           
+  account_type = "Savings Account";
+} else if (account instanceof CheckingAccount) {           
+  account_type = "Checking Account";
+} else {           
+  account_type = "Unknown Account Type";
+}
 
 
         // Print the current balance of the account
