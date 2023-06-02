@@ -14,7 +14,7 @@ public class TestReport {
     if ( args.length != 1 ) {
       System.out.println(USAGE);
     } else {
-      String dataFilePath = "C:/Users/flexs/OneDrive/Escritorio/UASD/SEMESTRE 2023-1/Programacion II/tareas 4-9/BankPrj/src/com/mybank/data";
+      String dataFilePath = args[0];
 
     try {
 	System.out.println("Reading data file: " + dataFilePath);
